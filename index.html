@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yusra | Web Developer & AI Creative</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#070912;color:#f8f8ff;line-height:1.6}
+:root{--p:#9d7cff;--c:#61e6ff;--muted:#a2a4b0;--border:rgba(255,255,255,.1);--card:#0e1220}
+nav{position:fixed;top:0;left:0;width:100%;height:70px;padding:0 7%;display:flex;justify-content:space-between;align-items:center;background:rgba(7,9,18,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);z-index:10}
+.logo{font-size:24px;font-weight:800}.logo span{color:var(--p)}
+nav ul{display:flex;gap:28px;list-style:none}nav a{color:#b8bac5;text-decoration:none;font-size:14px}nav a:hover{color:#fff}
+.hero{min-height:100vh;padding:125px 7% 70px;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;max-width:1400px;margin:auto}
+.badge{display:inline-block;border:1px solid rgba(157,124,255,.4);background:rgba(157,124,255,.08);color:#d1c5ff;border-radius:30px;padding:7px 14px;font-size:11px;letter-spacing:1.5px;margin-bottom:20px}
+h1{font-size:clamp(48px,7vw,82px);line-height:.98;letter-spacing:-3px}.gradient{background:linear-gradient(90deg,#fff,var(--p),var(--c));-webkit-background-clip:text;color:transparent}
+.hero p{color:var(--muted);max-width:600px;margin:24px 0;font-size:16px}
+.btn{display:inline-block;padding:13px 21px;border-radius:10px;text-decoration:none;font-weight:700;font-size:13px;margin:5px 8px 5px 0;transition:.3s}.primary{background:#fff;color:#080912}.secondary{border:1px solid #303342;color:#fff}.btn:hover{transform:translateY(-3px)}
+.hero-img{width:100%;height:410px;object-fit:cover;border-radius:25px;border:1px solid var(--border);box-shadow:0 25px 70px rgba(0,0,0,.35)}
+section{padding:90px 7%;max-width:1400px;margin:auto}.head{margin-bottom:40px}.head small{color:var(--p);letter-spacing:3px;font-size:11px;text-transform:uppercase}.head h2{font-size:42px;margin-top:5px}.head p{color:var(--muted);max-width:650px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:25px;transition:.3s}.card:hover{transform:translateY(-7px);border-color:rgba(157,124,255,.5)}.icon{font-size:28px;margin-bottom:18px}.card p{color:var(--muted);font-size:13px}
+.projects,.ads{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.project,.ad{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:.3s}.project:hover,.ad:hover{transform:translateY(-7px)}
+.project img,.ad img{width:100%;height:190px;object-fit:cover;display:block}.content{padding:20px}.tag{color:var(--p);font-size:10px;letter-spacing:2px}.content h3{margin:7px 0}.content p{color:var(--muted);font-size:13px}
+.skills{display:grid;grid-template-columns:1fr 1fr;gap:20px}.skillbox{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:28px}.skill{margin:17px 0}.skilltop{display:flex;justify-content:space-between;font-size:13px;margin-bottom:7px}.bar{height:6px;background:#202431;border-radius:10px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,var(--p),var(--c));width:0;transition:1.2s}
+.tools{display:flex;flex-wrap:wrap;gap:12px}.tool{padding:14px 20px;background:var(--card);border:1px solid var(--border);border-radius:12px}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.step{padding:25px;border-left:1px solid #30313d}.step b{color:var(--p)}.step p{color:var(--muted);font-size:13px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:20px}.aboutbox{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:30px}.aboutbox img{width:100%;height:180px;object-fit:cover;border-radius:14px;margin-top:20px}.aboutbox p{color:var(--muted);font-size:14px}
+.contact{text-align:center;background:linear-gradient(135deg,#15102b,#0d1622);border:1px solid var(--border);border-radius:28px;padding:85px 25px}.contact h2{font-size:clamp(38px,6vw,65px);line-height:1}.contact p{color:var(--muted);max-width:600px;margin:20px auto}
+footer{text-align:center;border-top:1px solid var(--border);padding:28px;color:#777;font-size:12px}
+.reveal{opacity:0;transform:translateY(22px);transition:.8s}.show{opacity:1;transform:none}
+@media(max-width:900px){.hero,.about,.skills{grid-template-columns:1fr}.grid4{grid-template-columns:1fr 1fr}.projects,.ads{grid-template-columns:1fr 1fr}.process{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){nav ul{display:none}.hero{padding-top:110px}.grid4,.projects,.ads,.process{grid-template-columns:1fr}section{padding:70px 5%}.hero{padding-left:5%;padding-right:5%}.hero-img{height:300px}h1{font-size:52px}.head h2{font-size:34px}}
+</style>
+</head>
+<body>
+<nav><div class="logo">YUSRA<span>.</span></div><ul>
+<li><a href="#home">Home</a></li><li><a href="#services">Services</a></li><li><a href="#work">Work</a></li><li><a href="#skills">Skills</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li>
+</ul></nav>
+
+<section class="hero" id="home">
+<div class="reveal"><div class="badge">AI • WEB DEVELOPMENT • CREATIVE DESIGN</div>
+<h1>Hi, I'm Yusra.<br><span class="gradient">I Build Digital Ideas.</span></h1>
+<p>I'm a creative web developer and AI learner. I build responsive websites, create digital advertisements and use modern AI tools to turn ideas into real projects.</p>
+<a class="btn primary" href="#work">View My Work →</a><a class="btn secondary" href="#contact">Contact Me</a></div>
+<img class="hero-img reveal" src="images/hero.jpg" alt="Yusra working on web development">
+</section>
+
+<section id="services"><div class="head reveal"><small>What I Do</small><h2>My Services</h2><p>Coding, AI and creative design combined into practical digital projects.</p></div>
+<div class="grid4">
+<div class="card reveal"><div class="icon">💻</div><h3>Web Development</h3><p>Responsive websites using HTML, CSS and JavaScript with clean layouts and interactive features.</p></div>
+<div class="card reveal"><div class="icon">🔥</div><h3>Firebase Projects</h3><p>Web projects using Firebase authentication and database functionality.</p></div>
+<div class="card reveal"><div class="icon">🤖</div><h3>AI-Powered Work</h3><p>Using AI tools for research, ideas, coding support and creative workflows.</p></div>
+<div class="card reveal"><div class="icon">🎨</div><h3>Ad Designing</h3><p>Promotional and social-media advertisements with attractive visual layouts.</p></div>
+</div></section>
+
+<section id="work"><div class="head reveal"><small>Portfolio</small><h2>My Work</h2><p>Examples of the type of projects and digital work I create.</p></div>
+<div class="projects">
+<div class="project reveal"><img src="images/project1.jpg" alt="Website project"><div class="content"><span class="tag">WEB DEVELOPMENT</span><h3>Responsive Website</h3><p>Modern website interface with a clean and responsive layout.</p></div></div>
+<div class="project reveal"><img src="images/project2.jpg" alt="Firebase login project"><div class="content"><span class="tag">FIREBASE</span><h3>Authentication System</h3><p>Signup and login interface designed around Firebase authentication.</p></div></div>
+<div class="project reveal"><img src="images/project3.jpg" alt="Admission form project"><div class="content"><span class="tag">DATABASE</span><h3>Admission Form</h3><p>Online form concept connected with Firebase database functionality.</p></div></div>
+</div></section>
+
+<section><div class="head reveal"><small>Creative Design</small><h2>Ad Design</h2><p>Creative advertisement concepts for social media and promotional content.</p></div>
+<div class="ads">
+<div class="ad reveal"><img src="images/ad1.jpg" alt="Skincare advertisement"><div class="content"><span class="tag">SOCIAL AD</span><h3>Product Promotion</h3><p>Clean promotional design for a beauty product.</p></div></div>
+<div class="ad reveal"><img src="images/ad2.jpg" alt="Food advertisement"><div class="content"><span class="tag">FOOD AD</span><h3>Food Promotion</h3><p>Eye-catching food advertisement concept.</p></div></div>
+<div class="ad reveal"><img src="images/ad3.jpg" alt="Fitness advertisement"><div class="content"><span class="tag">FITNESS AD</span><h3>Fitness Campaign</h3><p>Bold promotional design for a fitness campaign.</p></div></div>
+</div></section>
+
+<section id="skills"><div class="head reveal"><small>Technology</small><h2>My Skills</h2></div>
+<div class="skills">
+<div class="skillbox reveal">
+<div class="skill"><div class="skilltop"><span>HTML</span><span>90%</span></div><div class="bar"><div class="fill" data-width="90%"></div></div></div>
+<div class="skill"><div class="skilltop"><span>CSS</span><span>88%</span></div><div class="bar"><div class="fill" data-width="88%"></div></div></div>
+<div class="skill"><div class="skilltop"><span>JavaScript</span><span>78%</span></div><div class="bar"><div class="fill" data-width="78%"></div></div></div>
+</div>
+<div class="skillbox reveal">
+<div class="skill"><div class="skilltop"><span>Firebase</span><span>72%</span></div><div class="bar"><div class="fill" data-width="72%"></div></div></div>
+<div class="skill"><div class="skilltop"><span>AI Tools</span><span>85%</span></div><div class="bar"><div class="fill" data-width="85%"></div></div></div>
+<div class="skill"><div class="skilltop"><span>Ad Design</span><span>82%</span></div><div class="bar"><div class="fill" data-width="82%"></div></div></div>
+</div>
+</div></section>
+
+<section><div class="head reveal"><small>AI Workflow</small><h2>AI Tools I Use & Explore</h2></div>
+<div class="tools reveal"><div class="tool">GPT</div><div class="tool">Gemini</div><div class="tool">Claude</div><div class="tool">DeepSeek</div><div class="tool">Lovable</div><div class="tool">Perplexity</div></div>
+</section>
+
+<section><div class="head reveal"><small>How I Work</small><h2>From Idea to Project</h2></div>
+<div class="process">
+<div class="step reveal"><b>01</b><h3>Idea</h3><p>Understand the project and define what it needs.</p></div>
+<div class="step reveal"><b>02</b><h3>Design</h3><p>Plan the layout, content and visual direction.</p></div>
+<div class="step reveal"><b>03</b><h3>Build</h3><p>Turn the concept into a working digital project.</p></div>
+<div class="step reveal"><b>04</b><h3>Improve</h3><p>Test, refine and improve the final result.</p></div>
+</div></section>
+
+<section id="about"><div class="about">
+<div class="aboutbox reveal"><h3>About Yusra</h3><p>I'm Yusra, a creative learner working with web development, AI tools and digital design. I enjoy learning by building projects and turning ideas into working websites and creative content.</p><img src="images/about.jpg" alt="Creative workspace"></div>
+<div class="aboutbox reveal"><h3>My Goal</h3><p>My goal is to keep improving my coding and creative skills while building websites, advertisements and useful digital experiences.</p><img src="images/contact.jpg" alt="Creative desk"></div>
+</div></section>
+
+<section id="contact"><div class="contact reveal"><div class="badge">HAVE A PROJECT IN MIND?</div><h2>Let's turn your<br><span class="gradient">idea into reality.</span></h2><p>Websites, advertisements or creative digital projects — every project starts with an idea.</p><a class="btn primary" href="mailto:your@email.com">Get In Touch →</a></div></section>
+<footer>© 2026 Yusra — Web Developer & AI Creative</footer>
+
+<script>
+const reveals=document.querySelectorAll(".reveal");
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")});
+},{threshold:.12});
+reveals.forEach(e=>observer.observe(e));
+const bars=document.querySelectorAll(".fill");
+const barObserver=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{if(e.isIntersecting)e.target.style.width=e.target.dataset.width});
+},{threshold:.5});
+bars.forEach(b=>barObserver.observe(b));
+</script>
+</body>
+</html>
